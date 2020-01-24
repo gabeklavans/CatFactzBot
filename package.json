@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": "12.13.0"
+  },
   "name": "catfactzbot",
   "version": "1.0.0",
   "description": "For telegram",
@@ -10,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/gabeklavans/CatFactzBot.git"
   },
-  "author": "Gabe K",
+  "author": "Gabe-K",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/gabeklavans/CatFactzBot/issues"

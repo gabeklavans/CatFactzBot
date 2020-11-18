@@ -15,18 +15,21 @@ bot.onText(/\/fact/, (msg) => {
 
     var options = {
         method: 'GET',
-        url: 'https://catfact.ninja/fact',
+        // url: 'https://catfact.ninja/fact',
+	url: 'https://cat-fact.herokuapp.com/facts/random',
         headers:
         {
-            Host: 'catfact.ninja',
+            //Host: 'catfact.ninja',
+	    //Host: 'cat-fact.herokuapp'
         },
-        json: true
+        json: true,
+	//rejectUnauthorized: false
     };
 
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
 
-        bot.sendMessage(msg.chat.id, body.fact);
+        bot.sendMessage(msg.chat.id, body.text);
     });
 
 });

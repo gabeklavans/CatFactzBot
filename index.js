@@ -3,6 +3,8 @@ require('dotenv').config();
 const tgBot = require('node-telegram-bot-api');
 
 const bot = new tgBot(process.env.TOKEN, { polling: true });
+// const FACT_URL = 'https://cat-fact.herokuapp.com/facts/random';
+const FACT_URL = 'https://catfact.ninja/fact';
 
 bot.onText(/\/start/, (msg) => {
 
@@ -16,7 +18,7 @@ bot.onText(/\/fact/, (msg) => {
     var options = {
         method: 'GET',
         // url: 'https://catfact.ninja/fact',
-	url: 'https://cat-fact.herokuapp.com/facts/random',
+	url: FACT_URL,
         headers:
         {
             //Host: 'catfact.ninja',
@@ -29,7 +31,7 @@ bot.onText(/\/fact/, (msg) => {
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
 
-        bot.sendMessage(msg.chat.id, body.text);
+        bot.sendMessage(msg.chat.id, body.fact);
     });
 
 });

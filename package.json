@@ -1,7 +1,4 @@
 {
-  "engines": {
-    "node": "12.13.0"
-  },
   "name": "catfactzbot",
   "version": "1.0.0",
   "description": "For telegram",

@@ -1,0 +1,7 @@
+services:
+  catfactzbot:
+    build: .
+    env_file: ".env"
+    # required .env file entries:
+    # BOT_TOKEN=<YOUR_TOKEN>
+    restart: unless-stopped
